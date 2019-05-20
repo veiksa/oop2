@@ -40,6 +40,7 @@ public class TeamWork extends Application {
     Button btnSubtraction;
 
     Button btnVasta;
+    Button btnStart;
     //Label lblAnswer;
 
     Button liitmine;
@@ -86,6 +87,8 @@ public class TeamWork extends Application {
 
 
 
+
+
         vastatud = new Label("0");
         oigeid = new Label("0");
         valesid = new Label("0");
@@ -123,6 +126,8 @@ public class TeamWork extends Application {
 
         btnVasta = new Button("Esita Vastus");
         btnVasta.setAlignment(Pos.BOTTOM_RIGHT);
+        btnStart = new Button("Tsykkel alga");
+        btnStart.setAlignment(Pos.BOTTOM_LEFT);
         //lblAnswer = new Label("?");
 
         //lblAnswer.setAlignment(Pos.CENTER);
@@ -190,6 +195,7 @@ public class TeamWork extends Application {
         root.add(numPad, 0, 2);
         root.add(oigedValedAeg, 1, 2);
         root.add(btnVasta, 0, 3);
+        root.add(btnStart, 1,3);
 
         btnOne.setOnMouseClicked(syndmus -> {
             tfVastus.setText(tfVastus.getCharacters().toString() + btnOne.getText());
@@ -232,11 +238,111 @@ public class TeamWork extends Application {
         });
 
 
+        btnStart.setOnMouseClicked(syndmus -> {
+            Parameetrid teheteJaPiirArv = new Parameetrid(Integer.parseInt(teheteArv.getCharacters().toString()), Integer.parseInt(tehetePiirArv.getCharacters().toString()));
+            int piirArv = teheteJaPiirArv.getPiirArv();
+            int teheteArv = teheteJaPiirArv.getTeheteArv();
+
+
+            int i = 0;
+            int oigedVastamised = 0;
+            int valedVastamised = 0;
+            long startTime = System.currentTimeMillis();
+
+            while (i < teheteArv){
+                JuhuslikudNumbrid arvud = new JuhuslikudNumbrid(teheteJaPiirArv);
+
+                if (i % 2 == 0) {
+
+                    Liitmine tehe = new Liitmine(arvud.getJuhuslikNumber1(), arvud.getJuhuslikNumber2());
+                    System.out.println("Kui palju on " + tehe.toString());
+                    tfTehe.setText(tehe.toString());
+                    System.out.println();
+                    //int kasutajaSisend = tehe.userInput();
+
+                    btnVasta.setOnMouseClicked(vastuseSyndmus -> {
+                        if (tehe.Summeerimine() == Integer.parseInt(tfVastus.getCharacters().toString())){
+                            System.out.println();
+                            System.out.println("Õige vastus");
+                            //oigeid = new Label(Integer.toString(Integer.parseInt(oigeid.getText())+ 1));
+                            oigeid.setText(Integer.toString(Integer.parseInt(oigeid.getText()) + 1));
+                            //oigedVastamised += 1;
+                            //oigeid = new Label(Integer.toString(oigedVastamised));
+                            //System.out.println("Õigesti vastamisi: " + oigedVastamised);
+                            //System.out.println("Valesti vastamisi: " + valedVastamised);
+                            //System.out.println();
+                        }else{
+                            System.out.println();
+                            System.out.println("Vale vastus");
+                            System.out.println("Õige vastus on " + tehe.Summeerimine());
+                            valesid.setText(Integer.toString(Integer.parseInt(valesid.getText()) + 1));
+                            //valedVastamised += 1;
+                            //valesid = new Label(Integer.toString(valedVastamised));
+                            //System.out.println("Õigesti vastamisi: " + oigedVastamised);
+                            //System.out.println("Valesti vastamisi: " + valedVastamised);
+                            System.out.println();
+                        }
+
+                    });
+                    i++;
+
+
+                }else{
+                    Lahutamine tehe = new Lahutamine(arvud.getJuhuslikNumber1(), arvud.getJuhuslikNumber2());
+                    System.out.println("Kui palju on " + tehe.toString());
+                    tfTehe.setText(tehe.toString());
+                    System.out.println();
+                    //int kasutajaSisend = tehe.userInput();
+
+                    if (tehe.Lahutustehe() == Integer.parseInt(tfVastus.getCharacters().toString())){
+                        System.out.println();
+                        System.out.println("Õige vastus");
+                        oigedVastamised += 1;
+                        System.out.println("Õigesti vastamisi: " + oigedVastamised);
+                        System.out.println("Valesti vastamisi: " + valedVastamised);
+                        System.out.println();
+                    }else{
+                        System.out.println();
+                        System.out.println("Vale vastus");
+                        System.out.println("Õige vastus on " + tehe.Lahutustehe());
+                        valedVastamised += 1;
+                        System.out.println("Õigesti vastamisi: " + oigedVastamised);
+                        System.out.println("Valesti vastamisi: " + valedVastamised);
+                        System.out.println();
+                    }
+
+
+                    i++;
+
+                }
+
+
+            }
+            long endTime = System.currentTimeMillis();
+
+            long vastamiseKestvus = (endTime - startTime)/(60*1000);
+
+            System.out.println("=====================");
+            System.out.println("Koik vastatud");
+            System.out.println();
+            System.out.println("Õigesti vastamisi: " + oigedVastamised);
+            System.out.println("Valesti vastamisi: " + valedVastamised);
+            System.out.println();
+            System.out.println("aega kulus " + vastamiseKestvus + " minutit.");
+
+
+        });
+
+
+
+
         //root.add(btnClear, 0, 4, 2, 1);
 
         //root.add(tfTehe, 0, 2);
         //root.add(tfNum2, 1, 2);
         //root.add(lblAnswer, 0, 3, 2, 1);
+
+
 
 
 
@@ -247,8 +353,92 @@ public class TeamWork extends Application {
         primaryStage.setTitle("CalculatorFX 1.0");
         primaryStage.setScene(scene);
         primaryStage.show();
+/*
+        Parameetrid teheteJaPiirArv = new Parameetrid(Integer.parseInt(teheteArv.getCharacters().toString()), Integer.parseInt(tehetePiirArv.getCharacters().toString()));
+        int piirArv = teheteJaPiirArv.getPiirArv();
+        int teheteArv = teheteJaPiirArv.getTeheteArv();
 
 
+        int i = 0;
+        int oigedVastamised = 0;
+        int valedVastamised = 0;
+        long startTime = System.currentTimeMillis();
+
+        while (i < teheteArv){
+            JuhuslikudNumbrid arvud = new JuhuslikudNumbrid(teheteJaPiirArv);
+
+            if (i % 2 == 0) {
+
+                Liitmine tehe = new Liitmine(arvud.getJuhuslikNumber1(), arvud.getJuhuslikNumber2());
+                System.out.println("Kui palju on " + tehe.toString());
+                tfTehe = new TextField(tehe.toString());
+                System.out.println();
+                int kasutajaSisend = tehe.userInput();
+
+                if (tehe.Summeerimine() == Integer.parseInt(tfVastus.getCharacters().toString())){
+                    System.out.println();
+                    System.out.println("Õige vastus");
+                    oigedVastamised += 1;
+                    oigeid = new Label(Integer.toString(oigedVastamised));
+                    System.out.println("Õigesti vastamisi: " + oigedVastamised);
+                    System.out.println("Valesti vastamisi: " + valedVastamised);
+                    System.out.println();
+                }else{
+                    System.out.println();
+                    System.out.println("Vale vastus");
+                    System.out.println("Õige vastus on " + tehe.Summeerimine());
+                    valedVastamised += 1;
+                    valesid = new Label(Integer.toString(valedVastamised));
+                    System.out.println("Õigesti vastamisi: " + oigedVastamised);
+                    System.out.println("Valesti vastamisi: " + valedVastamised);
+                    System.out.println();
+                }
+
+
+                i++;
+            }else{
+                Lahutamine tehe = new Lahutamine(arvud.getJuhuslikNumber1(), arvud.getJuhuslikNumber2());
+                System.out.println("Kui palju on " + tehe.toString());
+                System.out.println();
+                int kasutajaSisend = tehe.userInput();
+
+                if (tehe.Lahutustehe() == kasutajaSisend){
+                    System.out.println();
+                    System.out.println("Õige vastus");
+                    oigedVastamised += 1;
+                    System.out.println("Õigesti vastamisi: " + oigedVastamised);
+                    System.out.println("Valesti vastamisi: " + valedVastamised);
+                    System.out.println();
+                }else{
+                    System.out.println();
+                    System.out.println("Vale vastus");
+                    System.out.println("Õige vastus on " + tehe.Lahutustehe());
+                    valedVastamised += 1;
+                    System.out.println("Õigesti vastamisi: " + oigedVastamised);
+                    System.out.println("Valesti vastamisi: " + valedVastamised);
+                    System.out.println();
+                }
+
+
+                i++;
+
+            }
+
+
+        }
+        long endTime = System.currentTimeMillis();
+
+        long vastamiseKestvus = (endTime - startTime)/(60*1000);
+
+        System.out.println("=====================");
+        System.out.println("Koik vastatud");
+        System.out.println();
+        System.out.println("Õigesti vastamisi: " + oigedVastamised);
+        System.out.println("Valesti vastamisi: " + valedVastamised);
+        System.out.println();
+        System.out.println("aega kulus " + vastamiseKestvus + " minutit.");
+
+*/
 
     }
 /*
@@ -263,4 +453,6 @@ public class TeamWork extends Application {
         lblAnswer.setPrefWidth(150);
     }
     */
+
+
 }
