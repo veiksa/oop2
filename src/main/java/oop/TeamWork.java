@@ -6,7 +6,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.awt.*;
@@ -253,6 +255,7 @@ public class TeamWork extends Application {
                 JuhuslikudNumbrid arvud = new JuhuslikudNumbrid(teheteJaPiirArv);
 
                 if (i % 2 == 0) {
+                    System.out.println(i);
 
                     Liitmine tehe = new Liitmine(arvud.getJuhuslikNumber1(), arvud.getJuhuslikNumber2());
                     System.out.println("Kui palju on " + tehe.toString());
@@ -262,25 +265,54 @@ public class TeamWork extends Application {
 
                     btnVasta.setOnMouseClicked(vastuseSyndmus -> {
                         if (tehe.Summeerimine() == Integer.parseInt(tfVastus.getCharacters().toString())){
-                            System.out.println();
+
                             System.out.println("Õige vastus");
                             //oigeid = new Label(Integer.toString(Integer.parseInt(oigeid.getText())+ 1));
                             oigeid.setText(Integer.toString(Integer.parseInt(oigeid.getText()) + 1));
-                            //oigedVastamised += 1;
-                            //oigeid = new Label(Integer.toString(oigedVastamised));
-                            //System.out.println("Õigesti vastamisi: " + oigedVastamised);
-                            //System.out.println("Valesti vastamisi: " + valedVastamised);
-                            //System.out.println();
+                            Stage kusimus = new Stage();
+                            // küsimuse ja kahe nupu loomine
+                            Label label = new Label("Oige vastus.\n");
+
+
+
+                            // nuppude grupeerimine
+                            FlowPane pane = new FlowPane(20, 20);
+                            pane.setAlignment(Pos.CENTER);
+
+                            // küsimuse ja nuppude gruppi paigutamine
+                            VBox vBox = new VBox(40);
+                            vBox.setAlignment(Pos.CENTER);
+                            vBox.getChildren().addAll(label, pane);
+
+                            //stseeni loomine ja näitamine
+                            Scene stseen2 = new Scene(vBox);
+                            kusimus.setScene(stseen2);
+                            kusimus.show();
+
                         }else{
+                            System.out.println();
                             System.out.println();
                             System.out.println("Vale vastus");
                             System.out.println("Õige vastus on " + tehe.Summeerimine());
                             valesid.setText(Integer.toString(Integer.parseInt(valesid.getText()) + 1));
-                            //valedVastamised += 1;
-                            //valesid = new Label(Integer.toString(valedVastamised));
-                            //System.out.println("Õigesti vastamisi: " + oigedVastamised);
-                            //System.out.println("Valesti vastamisi: " + valedVastamised);
-                            System.out.println();
+                            Stage kusimus = new Stage();
+                            // küsimuse ja kahe nupu loomine
+                            Label label = new Label("Vale vastus! Oige vastus on: " + tehe.Summeerimine());
+
+
+                            // nuppude grupeerimine
+                            FlowPane pane = new FlowPane(10, 10);
+                            pane.setAlignment(Pos.CENTER);
+
+                            // küsimuse ja nuppude gruppi paigutamine
+                            VBox vBox = new VBox(40);
+                            vBox.setAlignment(Pos.CENTER);
+                            vBox.getChildren().addAll(label, pane);
+
+                            //stseeni loomine ja näitamine
+                            Scene stseen2 = new Scene(vBox);
+                            kusimus.setScene(stseen2);
+                            kusimus.show();
                         }
 
                     });
@@ -288,29 +320,62 @@ public class TeamWork extends Application {
 
 
                 }else{
-                    Lahutamine tehe = new Lahutamine(arvud.getJuhuslikNumber1(), arvud.getJuhuslikNumber2());
-                    System.out.println("Kui palju on " + tehe.toString());
-                    tfTehe.setText(tehe.toString());
-                    System.out.println();
-                    //int kasutajaSisend = tehe.userInput();
+                    System.out.println(i);
+                    btnVasta.setOnMouseClicked(vastuseSyndmus -> {
+                        Lahutamine tehe = new Lahutamine(arvud.getJuhuslikNumber1(), arvud.getJuhuslikNumber2());
+                        System.out.println("Kui palju on " + tehe.toString());
+                        tfTehe.setText(tehe.toString());
+                        System.out.println();
+                        //int kasutajaSisend = tehe.userInput();
 
-                    if (tehe.Lahutustehe() == Integer.parseInt(tfVastus.getCharacters().toString())){
-                        System.out.println();
-                        System.out.println("Õige vastus");
-                        oigedVastamised += 1;
-                        System.out.println("Õigesti vastamisi: " + oigedVastamised);
-                        System.out.println("Valesti vastamisi: " + valedVastamised);
-                        System.out.println();
-                    }else{
-                        System.out.println();
-                        System.out.println("Vale vastus");
-                        System.out.println("Õige vastus on " + tehe.Lahutustehe());
-                        valedVastamised += 1;
-                        System.out.println("Õigesti vastamisi: " + oigedVastamised);
-                        System.out.println("Valesti vastamisi: " + valedVastamised);
-                        System.out.println();
-                    }
+                        if (tehe.Lahutustehe() == Integer.parseInt(tfVastus.getCharacters().toString())){
+                            System.out.println();
+                            System.out.println("Õige vastus");
+                            oigeid.setText(Integer.toString(Integer.parseInt(oigeid.getText()) + 1));
+                            Stage kusimus = new Stage();
+                            // küsimuse ja kahe nupu loomine
+                            Label label = new Label("Oige vastus.\n");
 
+
+
+                            // nuppude grupeerimine
+                            FlowPane pane = new FlowPane(20, 20);
+                            pane.setAlignment(Pos.CENTER);
+
+                            // küsimuse ja nuppude gruppi paigutamine
+                            VBox vBox = new VBox(40);
+                            vBox.setAlignment(Pos.CENTER);
+                            vBox.getChildren().addAll(label, pane);
+
+                            //stseeni loomine ja näitamine
+                            Scene stseen2 = new Scene(vBox);
+                            kusimus.setScene(stseen2);
+                            kusimus.show();
+                        }else{
+                            System.out.println();
+                            System.out.println("Vale vastus");
+                            System.out.println("Õige vastus on " + tehe.Lahutustehe());
+                            valesid.setText(Integer.toString(Integer.parseInt(valesid.getText()) + 1));
+                            Stage kusimus = new Stage();
+                            // küsimuse ja kahe nupu loomine
+                            Label label = new Label("Vale vastus! Oige vastus on: " + tehe.Lahutustehe());
+
+
+                            // nuppude grupeerimine
+                            FlowPane pane = new FlowPane(10, 10);
+                            pane.setAlignment(Pos.CENTER);
+
+                            // küsimuse ja nuppude gruppi paigutamine
+                            VBox vBox = new VBox(40);
+                            vBox.setAlignment(Pos.CENTER);
+                            vBox.getChildren().addAll(label, pane);
+
+                            //stseeni loomine ja näitamine
+                            Scene stseen2 = new Scene(vBox);
+                            kusimus.setScene(stseen2);
+                            kusimus.show();
+                        }
+                    });
 
                     i++;
 
