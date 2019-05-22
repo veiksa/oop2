@@ -85,6 +85,7 @@ public class TeamWork extends Application {
     }
 
     private void esitaKysimus() {
+        tfVastus.clear();
         if (maxTehted > tehtudTehted) {
             JuhuslikudNumbrid arvud = new JuhuslikudNumbrid(teheteJaPiirArv);
             if (tehtudTehted % 2 == 0) {
@@ -103,6 +104,7 @@ public class TeamWork extends Application {
                         System.out.println("Õige vastus");
                         //oigeid = new Label(Integer.toString(Integer.parseInt(oigeid.getText())+ 1));
                         oigeid.setText(Integer.toString(Integer.parseInt(oigeid.getText()) + 1));
+                        //tfVastus.clear();
                         Stage kusimus = new Stage();
                         // küsimuse ja kahe nupu loomine
                         Label label = new Label("Oige vastus.\n");
@@ -148,6 +150,7 @@ public class TeamWork extends Application {
                     }
 
                     tehtudTehted++;
+                    vastatud.setText(Integer.toString(tehtudTehted));
                     esitaKysimus();
 
                 });
@@ -212,14 +215,36 @@ public class TeamWork extends Application {
                     }
 
                     tehtudTehted++;
+                    vastatud.setText(Integer.toString(tehtudTehted));
                     esitaKysimus();
                 });
             }
         } else {
+            Stage kusimus = new Stage();
+            // küsimuse ja kahe nupu loomine
+            Label label = new Label("Koik tehted vastatud\n Vaata tulemust");
+
+
+            // nuppude grupeerimine
+            FlowPane pane = new FlowPane(20, 20);
+            pane.setAlignment(Pos.CENTER);
+
+            // küsimuse ja nuppude gruppi paigutamine
+            VBox vBox = new VBox(40);
+            vBox.setAlignment(Pos.CENTER);
+            vBox.getChildren().addAll(label, pane);
+
+            //stseeni loomine ja näitamine
+            Scene stseen2 = new Scene(vBox);
+            kusimus.setScene(stseen2);
+            kusimus.show();
 
             long endTime = System.currentTimeMillis();
 
             long vastamiseKestvus = (endTime - startTime) / (60 * 1000);
+            long vastamisKestvusSekundid = (endTime - startTime) / 1000 - vastamiseKestvus;
+
+            aeg.setText(vastamiseKestvus + ":" + vastamisKestvusSekundid);
 
             System.out.println("=====================");
             System.out.println("Koik vastatud");
@@ -227,7 +252,7 @@ public class TeamWork extends Application {
             System.out.println("Õigesti vastamisi: " + oigedVastamised);
             System.out.println("Valesti vastamisi: " + valedVastamised);
             System.out.println();
-            System.out.println("aega kulus " + vastamiseKestvus + " minutit.");
+            System.out.println("aega kulus " + vastamiseKestvus + " minutit ja " + vastamisKestvusSekundid + "sekundit.");
         }
     }
 
@@ -236,6 +261,7 @@ public class TeamWork extends Application {
         startTime = System.currentTimeMillis();
         teheteJaPiirArv = new Parameetrid(Integer.parseInt(teheteArv.getCharacters().toString()), Integer.parseInt(tehetePiirArv.getCharacters().toString()));
         maxTehted = teheteJaPiirArv.getTeheteArv();
+
 
         esitaKysimus();
     }

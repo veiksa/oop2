@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd9dce26-3e45-4dda-829d-09e97372873b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileContent/fileContent.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/oop/TeamWork.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/oop/TeamWork.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/oop/TeamWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oop/TeamWork.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oop/Tehted.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oop/Tehted.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -79,7 +69,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/oop/Kysimus.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
+            <state relative-caret-position="-796">
               <caret line="93" column="18" lean-forward="true" selection-start-line="93" selection-start-column="18" selection-end-line="93" selection-end-column="18" />
             </state>
           </provider>
@@ -88,8 +78,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/oop/TeamWork.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="272" column="37" selection-start-line="272" selection-start-column="37" selection-end-line="272" selection-end-column="37" />
+            <state relative-caret-position="2010">
+              <caret line="245" column="72" selection-start-line="245" selection-start-column="72" selection-end-line="245" selection-end-column="72" />
             </state>
           </provider>
         </entry>
@@ -163,8 +153,10 @@
     <findStrings>
       <find>piirarv</find>
       <find>piirArv</find>
-      <find>stseen2</find>
       <find>user</find>
+      <find>tfvastus</find>
+      <find>aeg</find>
+      <find>stseen2</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -265,7 +257,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558531366632" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558554867332" />
     <property name="last_opened_file_path" value="/media/veiko/DATA/lisaMaht/Downloads/xox" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
@@ -363,9 +355,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1600" height="875" extended-state="7" />
+    <frame x="0" y="25" width="1600" height="875" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2039897" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2039897" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -374,7 +367,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32841823" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32841823" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3994638" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -451,13 +444,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/oop/Kysimus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="93" column="18" lean-forward="true" selection-start-line="93" selection-start-column="18" selection-end-line="93" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/jdk-11/lib/src.zip!/java.base/java/io/FileInputStream.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-625">
@@ -510,10 +496,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/oop/Kysimus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-796">
+          <caret line="93" column="18" lean-forward="true" selection-start-line="93" selection-start-column="18" selection-end-line="93" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/oop/TeamWork.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="272" column="37" selection-start-line="272" selection-start-column="37" selection-end-line="272" selection-end-column="37" />
+        <state relative-caret-position="2010">
+          <caret line="245" column="72" selection-start-line="245" selection-start-column="72" selection-end-line="245" selection-end-column="72" />
         </state>
       </provider>
     </entry>
