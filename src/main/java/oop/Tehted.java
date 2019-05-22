@@ -41,4 +41,12 @@ public class Tehted {
     public void setArv2(int arv2) {
         this.arv2 = arv2;
     }
+
+    public int Summeerimine(){
+        return arv1 + arv2;
+    }
+
+    public int Lahutustehe(){
+        return arv1 - arv2;
+    }
 }
